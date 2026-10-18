@@ -194,3 +194,8 @@ Quick regression checklists per product, based on the areas where bugs were foun
 - **Implemented** — implemented by the development team
 - **Accepted** — approved for implementation
 - **Submitted / In review** — proposed, under review
+
+
+## Contact
+
+- LinkedIn: [Nino Zaitseva](https://www.linkedin.com/in/nino-zaitseva-209880376/)
