@@ -15,7 +15,7 @@ Manual QA tester. This repository collects real bug reports and product improvem
 - Localization testing (Georgian / English)
 - Test design: test cases and regression checklists derived from real defects
 - Clear bug reports: environment, preconditions, steps, expected vs. actual result
-- Tools: Jira, ClickUp, Postman, Swagger, Chrome DevTools
+- Tools: Jira, ClickUp, Postman, Swagger, Chrome DevTools, Trello, Qase.io, Notion
 
 ## Summary
 
