@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nino Zaitseva — QA Portfolio</title>
+<meta name="description" content="Manual QA tester portfolio: real bug reports, UX recommendations, test cases and checklists for web, Android and AI chatbot products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --ink:#14171f; --muted:#5b6475; --line:#e3e6ec;
+  --accent:#4f46e5; --accent-soft:#eef0ff; --accent-ink:#ffffff;
+  --high:#c2410c; --high-soft:#fff1e8; --urgent:#b91c1c; --urgent-soft:#fdecec;
+  --normal:#1d4ed8; --normal-soft:#eaf1ff; --low:#4b5563; --low-soft:#f0f1f3;
+  --ok:#047857; --ok-soft:#e7f7f0;
+  --radius:14px; --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 16px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1117; --surface:#171a22; --ink:#eef0f5; --muted:#9aa3b5; --line:#272b36;
+    --accent:#8b85ff; --accent-soft:#232245; --accent-ink:#0f1117;
+    --high:#fb923c; --high-soft:#3a2416; --urgent:#f87171; --urgent-soft:#3b1a1a;
+    --normal:#7aa7ff; --normal-soft:#1b2640; --low:#b0b7c3; --low-soft:#23262e;
+    --ok:#34d399; --ok-soft:#14302a; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1117; --surface:#171a22; --ink:#eef0f5; --muted:#9aa3b5; --line:#272b36;
+  --accent:#8b85ff; --accent-soft:#232245; --accent-ink:#0f1117;
+  --high:#fb923c; --high-soft:#3a2416; --urgent:#f87171; --urgent-soft:#3b1a1a;
+  --normal:#7aa7ff; --normal-soft:#1b2640; --low:#b0b7c3; --low-soft:#23262e;
+  --ok:#34d399; --ok-soft:#14302a; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth} section,details{scroll-margin-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-weight:700;color:var(--ink)} .brand span{color:var(--accent)}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav ul a{color:var(--muted)} .nav ul a:hover{color:var(--ink);text-decoration:none}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 10px;cursor:pointer;font:inherit;font-size:13px}
+@media (max-width:720px){.nav ul{display:none}}
+section{padding:72px 0}
+.hero{padding:88px 0 56px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 12px;border-radius:999px;margin-bottom:18px}
+h1{font-size:clamp(34px,5vw,52px);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
+h2{font-size:28px;margin:0 0 8px;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 28px}
+.sub{color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{text-decoration:none;filter:brightness(1.05)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:32px;line-height:1;margin-bottom:6px}
+.stat span{color:var(--muted);font-size:14px}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:860px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.chip.plain{background:var(--low-soft);color:var(--muted)}
+.proj-count{margin-top:14px;font-size:13px;color:var(--muted)}
+.feature{border-left:4px solid var(--accent)}
+.feature .k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700;margin-bottom:6px}
+/* work samples */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:24px 0 18px}
+.tab{background:none;border:none;font:inherit;font-weight:600;color:var(--muted);padding:10px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tab .n{font-weight:500;color:var(--muted);margin-left:4px;font-size:13px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.filters select,.filters input{font:inherit;font-size:14px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:0}
+.filters input{flex:1 1 220px}
+.count{font-size:14px;color:var(--muted);margin-bottom:12px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.item summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+.item summary::-webkit-details-marker{display:none}
+.item summary:hover{background:color-mix(in srgb,var(--accent-soft) 40%,transparent)}
+.iid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--muted);white-space:nowrap}
+.ititle{font-weight:600;font-size:15px}
+.iproj{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+.pri{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pri.High{background:var(--high-soft);color:var(--high)} .pri.Urgent{background:var(--urgent-soft);color:var(--urgent)}
+.pri.Normal,.pri.Medium{background:var(--normal-soft);color:var(--normal)} .pri.Low,.pri.none{background:var(--low-soft);color:var(--low)}
+.st{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--ok-soft);color:var(--ok);margin-left:6px;white-space:nowrap}
+.body{padding:4px 18px 20px;border-top:1px solid var(--line)}
+.body h4{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:18px 0 6px}
+.body p,.body ol,.body ul{margin:0;font-size:15px}
+.body ol{padding-left:20px}
+.meta{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:14px;margin-top:16px}
+.meta dt{color:var(--muted)} .meta dd{margin:0}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.res div{border-radius:10px;padding:12px 14px;font-size:15px}
+.res .e{background:var(--ok-soft)} .res .a{background:var(--urgent-soft)}
+.res b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.res .e b{color:var(--ok)} .res .a b{color:var(--urgent)}
+@media (max-width:600px){.res{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.item summary{grid-template-columns:1fr auto}.iid{display:none}}
+.cl h3{margin:0 0 4px}
+.cl h4{font-size:14px;margin:16px 0 6px}
+.cl ul{list-style:none;padding:0;margin:0}
+.cl li{display:flex;gap:10px;font-size:15px;padding:4px 0}
+.cl li::before{content:"";flex:0 0 16px;height:16px;margin-top:4px;border:1.5px solid var(--line);border-radius:4px}
+.contact{text-align:center}
+.contact .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+.note{font-size:14px;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;margin-top:20px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Nino Zaitseva<span>.</span></a>
+  <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#work">Work samples</a></li><li><a href="#contact">Contact</a></li></ul>
+  <button class="theme-btn" id="theme" aria-label="Toggle dark mode">◐ Theme</button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Manual QA Tester · Web · Android · AI chatbots</span>
+  <h1>I find the bugs before your users do.</h1>
+  <p class="lead">Hi, I’m Nino — a manual QA tester based in Tbilisi. I test web and mobile products for U.S. clients, with a focus on <strong>AI-powered features</strong> like chatbots and AI search. Below are real bug reports, recommendations, test cases and checklists from my work.</p>
+  <div class="btns">
+    <a class="btn primary" href="#work">View work samples</a>
+    <a class="btn" href="https://github.com/duti7799-afk/qa-portfolio" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/nino-zaitseva-209880376/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="s-bugs">0</b><span>Bug reports</span></div>
+    <div class="stat"><b id="s-recs">0</b><span>UX recommendations</span></div>
+    <div class="stat"><b id="s-tcs">0</b><span>Test cases</span></div>
+    <div class="stat"><b id="s-cl">0</b><span>Checklist items</span></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>What I do</h2>
+  <p class="sub">Testing across web, Android and AI products — from first exploration to clear, reproducible reports.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Functional &amp; UI testing</h3><p>Web and Android apps: navigation, forms, validation, responsive layout and regression.</p></div>
+    <div class="card"><h3>AI chatbot testing</h3><p>Context handling, wrong or invented answers, follow-up questions and handoff to live operators.</p></div>
+    <div class="card"><h3>Edge cases &amp; security</h3><p>Boundary values, negative scenarios, duplicate data, password rules and role separation.</p></div>
+    <div class="card"><h3>Localization</h3><p>Georgian / English: incomplete translations, language switching, layout with longer text.</p></div>
+    <div class="card"><h3>Test design</h3><p>Test cases and regression checklists written from real defects.</p></div>
+    <div class="card"><h3>UX recommendations</h3><p>Concrete product improvements: current state, problem, proposal and why it matters.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Tools</h3>
+    <div class="chips"><span class="chip">Jira</span><span class="chip">ClickUp</span><span class="chip">Postman</span><span class="chip">Swagger</span><span class="chip">Chrome DevTools</span><span class="chip">Android devices</span><span class="chip plain">Learning: JavaScript &amp; Playwright</span></div>
+  </div>
+</div></section>
+
+<section id="projects" style="padding-top:24px"><div class="wrap">
+  <h2>Projects tested</h2>
+  <p class="sub">Real commercial products. Names are replaced with generic descriptions because of an NDA.</p>
+  <div class="grid g3" id="proj-grid"></div>
+</div></section>
+
+<section id="highlights" style="padding-top:24px"><div class="wrap">
+  <h2>Highlights</h2>
+  <p class="sub">A few findings I’m proud of.</p>
+  <div class="grid g3" id="hl-grid"></div>
+</div></section>
+
+<section id="work" style="padding-top:24px"><div class="wrap">
+  <h2>Work samples</h2>
+  <p class="sub">Click any item to see the full report.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="filters">
+    <select id="f-proj" aria-label="Filter by project"><option value="">All projects</option></select>
+    <input id="f-q" type="search" placeholder="Search…" aria-label="Search">
+  </div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+  <p class="note">All reports come from projects under NDA. Product names, links, attachments and client data have been removed.</p>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let’s work together</h2>
+  <p class="sub">Open to freelance and remote QA projects.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://www.linkedin.com/in/nino-zaitseva-209880376/" target="_blank" rel="noopener">Message me on LinkedIn</a>
+    <a class="btn" href="https://github.com/duti7799-afk/qa-portfolio" target="_blank" rel="noopener">See the GitHub repo</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> Nino Zaitseva · QA Portfolio</div></footer>
+
+<script>
+const DATA = {projects:[],bugs:[],recs:[],tcs:[],checklists:[]};
+const clean = t => t.replace(/\*\*/g,'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').trim();
+function sections(md){const o={};md.split(/^## /m).slice(1).forEach(b=>{const n=b.indexOf('\n');o[b.slice(0,n).trim()]=b.slice(n+1).trim();});return o;}
+function table(md){const o={};md.replace(/^\| \*\*(.+?)\*\* \| (.*?) \|$/gm,(m,k,v)=>{o[k]=v.trim();});return o;}
+const list = t => (t||'').split('\n').filter(l=>/^\d+\.\s/.test(l)).map(l=>l.replace(/^\d+\.\s*/,''));
+const txt = t => t ? clean(t.split('\n').filter(l=>l.trim()).join(' ')) : null;
+async function get(p){const r=await fetch(p);if(!r.ok)throw new Error(p);return r.text();}
+async function load(){
+  const readme=await get('README.md');
+  const keyOf=p=>p.split('/')[1].replace(/\.md$/,'');
+  const sum=readme.split('## Summary')[1].split('\n## ')[0];
+  const names={};
+  sum.split('\n').filter(l=>l.startsWith('| ')&&!l.includes('**Total**')&&!l.startsWith('| Project')).forEach(l=>{const c=l.split('|').map(x=>x.trim());names[c[1]]=c[2];});
+  const links=[...readme.matchAll(/\]\(((?:bug-reports|recommendations|test-cases|checklists)\/[^)]+\.md)\)/g)].map(m=>m[1]).filter((v,i,a)=>a.indexOf(v)===i);
+  const texts=await Promise.all(links.map(get));
+  const projByName={};
+  links.forEach((p,i)=>{
+    const md=texts[i], key=p.split('/')[1].replace(/\.md$/,''), t=table(md), s=sections(md);
+    const h=(md.match(/^# (.+)$/m)||[])[1]||'';
+    if(t.Project) projByName[t.Project]=key;
+    if(p.startsWith('bug-reports/')){
+      const [id,...rest]=h.split(': ');
+      DATA.bugs.push({id,p:key,title:rest.join(': '),pri:t.Priority,env:t.Environment,rate:t.Reproducibility,pre:txt(s['Preconditions']),steps:list(s['Steps to Reproduce']),exp:txt(s['Expected Result']),act:txt(s['Actual Result']),notes:txt(s['Notes'])});
+    } else if(p.startsWith('recommendations/')){
+      const [id,...rest]=h.split(': ');
+      DATA.recs.push({id,p:key,title:rest.join(': '),pri:t.Priority,status:t.Status,current:txt(s['Current Behavior']),problem:txt(s['Problem']),proposal:txt(s['Proposed Solution']),why:txt(s['Justification'])});
+    } else if(p.startsWith('test-cases/')){
+      const k=keyOf(p);
+      md.split(/^## (?=TC-)/m).slice(1).forEach(b=>{
+        const id=b.split('\n')[0].trim(); const f=n=>((b.match(new RegExp('\\*\\*'+n+':\\*\\*\\s*([^\\n·]+)'))||[])[1]||'').trim();
+        DATA.tcs.push({id,p:k,title:f('Title'),type:f('Type'),pri:f('Priority'),rel:clean(f('Related')),pre:f('Preconditions'),steps:list(b.split('**Steps:**')[1]),exp:f('Expected result')});
+      });
+    } else if(p.startsWith('checklists/')){
+      const k=keyOf(p);
+      DATA.checklists.push({p:k,sections:md.split(/^## /m).slice(1).map(b=>({name:b.split('\n')[0].trim(),items:b.split('\n').filter(l=>l.startsWith('- [ ]')).map(l=>l.slice(6).trim())}))});
+    }
+  });
+  const seen=new Set();
+  Object.entries(names).forEach(([n,d])=>{const key=projByName[n];if(key&&!seen.has(key)){seen.add(key);DATA.projects.push({key,name:n,desc:d});}});
+}
+load().then(()=>{
+const HIGHLIGHTS = [
+ {id:"BUG-03", k:"Boundary testing", text:"Found that after-hours operator routing failed only when the shift ended later than 17:00 — a boundary bug, fixed by the team."},
+ {id:"BUG-05", k:"AI chatbot", text:"Showed the chatbot ignored its own filtered results and pulled a hidden “4th item” from the full catalog."},
+ {id:"BUG-25", k:"Access control", text:"Candidate credentials logged straight into the Company portal — a role-separation issue."}
+];
+window.P = Object.fromEntries(DATA.projects.map(p=>[p.key,p]));
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pri = p => `<span class="pri ${p&&p!=='—'?esc(p):'none'}">${p&&p!=='—'?esc(p):'—'}</span>`;
+
+// theme
+(function(){
+  const root=document.documentElement, b=document.getElementById('theme');
+  let saved=null; try{saved=localStorage.getItem('theme')}catch(e){}
+  if(saved) root.dataset.theme=saved;
+  b.onclick=()=>{const dark = root.dataset.theme ? root.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark?'light':'dark'; try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
+})();
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// stats
+const clCount = DATA.checklists.reduce((a,c)=>a+c.sections.reduce((x,s)=>x+s.items.length,0),0);
+[['s-bugs',DATA.bugs.length],['s-recs',DATA.recs.length],['s-tcs',DATA.tcs.length],['s-cl',clCount]].forEach(([id,n])=>document.getElementById(id).textContent=n);
+
+// projects
+document.getElementById('proj-grid').innerHTML = DATA.projects.map(p=>`<div class="card"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p></div>`).join('');
+
+// highlights
+document.getElementById('hl-grid').innerHTML = HIGHLIGHTS.map(h=>{
+  const b=DATA.bugs.find(x=>x.id===h.id);
+  return `<div class="card feature"><div class="k">${esc(h.k)}</div><h3>${esc(b.title)}</h3><p>${esc(h.text)}</p><div class="proj-count"><a href="#work" data-open="${h.id}">Read the report →</a></div></div>`;
+}).join('');
+
+// work samples
+const TABS=[{k:'bugs',label:'Bug reports'},{k:'recs',label:'Recommendations'},{k:'tcs',label:'Test cases'},{k:'checklists',label:'Checklists'}];
+let tab='bugs';
+const tabsEl=document.getElementById('tabs');
+tabsEl.innerHTML=TABS.map(t=>`<button class="tab" role="tab" data-k="${t.k}" aria-selected="${t.k===tab}">${t.label}<span class="n">${t.k==='checklists'?DATA.checklists.length:DATA[t.k].length}</span></button>`).join('');
+tabsEl.onclick=e=>{const b=e.target.closest('.tab'); if(!b) return; tab=b.dataset.k; [...tabsEl.children].forEach(c=>c.setAttribute('aria-selected',c.dataset.k===tab)); render();};
+const fp=document.getElementById('f-proj'), fq=document.getElementById('f-q');
+fp.innerHTML+=DATA.projects.map(p=>`<option value="${p.key}">${esc(p.name)}</option>`).join('');
+fp.onchange=render; fq.oninput=render;
+
+function bugHTML(b){
+  return `<details class="item" id="${b.id}"><summary><span class="iid">${b.id}</span><span class="ititle">${esc(b.title)}<span class="iproj">${esc(P[b.p].name)}</span></span>${pri(b.pri)}</summary>
+  <div class="body">
+    <dl class="meta"><dt>Environment</dt><dd>${esc(b.env)}</dd><dt>Reproducibility</dt><dd>${esc(b.rate)}</dd>${b.pre?`<dt>Preconditions</dt><dd>${esc(b.pre)}</dd>`:''}</dl>
+    <h4>Steps to reproduce</h4><ol>${b.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+    <div class="res"><div class="e"><b>Expected</b>${esc(b.exp)}</div><div class="a"><b>Actual</b>${esc(b.act)}</div></div>
+    ${b.notes?`<h4>Notes</h4><p>${esc(b.notes)}</p>`:''}
+  </div></details>`;
+}
+function recHTML(r){
+  return `<details class="item" id="${r.id}"><summary><span class="iid">${r.id}</span><span class="ititle">${esc(r.title)}<span class="iproj">${esc(P[r.p].name)}</span></span><span>${pri(r.pri)}<span class="st">${esc(r.status)}</span></span></summary>
+  <div class="body"><h4>Current behavior</h4><p>${esc(r.current)}</p><h4>Problem</h4><p>${esc(r.problem)}</p><h4>Proposed solution</h4><p>${esc(r.proposal)}</p><h4>Why it matters</h4><p>${esc(r.why)}</p></div></details>`;
+}
+function tcHTML(t){
+  const rel = /^(BUG|REC)-/.test(t.rel) ? `<a href="#${t.rel}" data-open="${t.rel}">${t.rel}</a>` : esc(t.rel);
+  return `<details class="item" id="${t.id}"><summary><span class="iid">${t.id}</span><span class="ititle">${esc(t.title)}<span class="iproj">${esc(P[t.p].name)} · ${esc(t.type)}</span></span>${pri(t.pri)}</summary>
+  <div class="body"><dl class="meta"><dt>Preconditions</dt><dd>${esc(t.pre)}</dd><dt>Related</dt><dd>${rel}</dd></dl>
+  <h4>Steps</h4><ol>${t.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+  <div class="res"><div class="e" style="grid-column:1/-1"><b>Expected result</b>${esc(t.exp)}</div></div></div></details>`;
+}
+function clHTML(c){
+  return `<div class="card cl" style="margin-bottom:14px"><h3>${esc(P[c.p].name)}</h3>${c.sections.map(s=>`<h4>${esc(s.name)}</h4><ul>${s.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`).join('')}</div>`;
+}
+function render(){
+  const pk=fp.value, q=fq.value.trim().toLowerCase();
+  let items = tab==='checklists' ? DATA.checklists : DATA[tab];
+  items = items.filter(x=>(!pk||x.p===pk) && (!q||JSON.stringify(x).toLowerCase().includes(q)));
+  const label = {bugs:'bug reports',recs:'recommendations',tcs:'test cases',checklists:'checklists'}[tab];
+  document.getElementById('count').textContent = `${items.length} ${label}`;
+  const f={bugs:bugHTML,recs:recHTML,tcs:tcHTML,checklists:clHTML}[tab];
+  document.getElementById('list').innerHTML = items.map(f).join('') || '<p class="sub">Nothing found.</p>';
+}
+render();
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-open]'); if(!a) return; e.preventDefault();
+  const id=a.dataset.open; const k=id.startsWith('BUG')?'bugs':id.startsWith('REC')?'recs':'tcs';
+  tab=k; fp.value=''; fq.value=''; [...tabsEl.children].forEach(c=>c.setAttribute('aria-selected',c.dataset.k===tab)); render();
+  const el=document.getElementById(id); if(el){el.open=true; el.scrollIntoView({behavior:'smooth',block:'start'});}
+});
+
+}).catch(e=>{document.getElementById('list').innerHTML='<p class="sub">Could not load the reports. Please refresh the page.</p>';console.error(e);});
+</script>
+</body>
+</html>
